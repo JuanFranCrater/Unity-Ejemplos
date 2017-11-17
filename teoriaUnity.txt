@@ -1,0 +1,331 @@
+Los juegos se distribuyen. Se publicitan. Antes no habia internet. 
+
+Hay paginas web para publicitar tus juegos. 
+
+Para desarrollar hay varias areas especializadas, pero hay tres clave:
+Diseño-> que parte grafica, que interactua con el usuario, lo que hay vamos que no sabe explicarlo
+Desarrollo-> dar comportamiento a lo diseñado
+Marketing y negocio -> dar difusion
+
+High Concept ->Documento, el GDD de toda la vida
+		-Nombre del juego
+		-Guión
+		-Mecanicas (1ºpersona, 3ºpersona)
+
+Gameplay -> Se contempla la jugabilidad, el coraçao. 
+Scritps(Dialogos y Cinematica) ->
+
+biblia del arte(diseño del hub e interfaz, de personajes, entornos y escenarios, sonidos, musica),documento tecnico() y documento de diseño de niveles()
+
+El testeo, mejor que lo haga otro
+
+
+Motor de juego-> Un motor de juego es un sistema diseñado para la creacion de videojuegos que aglutina un grupo de sofwares necesarios para el desarrollo
+La funcion es darnos la herramientas para el desarrollo de juegos de una manera comoda
+Un moto incluye como minimo un motor grafico encargado de pintar en pantalla, tambien además tiene un motor de fisicas, motor de terrenos(desarrollo de entornos), 
+en el momento en el que añadamos fisicas, le otorga las propiedades de colisiones al objeto. Hay motores fisicos de pago, unity tiene uno propio. 
+Problemas de renderizado y peso. 
+
+Why Unity?
+Cumple las expectativas y es gratuito en una de sus versiones.
+
+Unity tiene una pagina web, y esta en Español DE ESPAÑA. 
+Es multiplataforma pa to'
+Almacen de recurses( o Assets, o aces)  
+
+Objeto en Unity-> Game object
+
+Escena-> partes de un proyecto
+
+pantalla de la escena-> no le estaba escuchando pero es donde se ponde cosas
+
+pestaña game-> Vista del usuario del juego, lo que se muestra puede o no coincidir con la escena
+
+Ventana del proyecto-> contiene una carpeta Assets donde apareceran los objetos importados o scripts
+
+ventana de jerarquia, contiene los game objects de la escena
+
+ventana Inspector-> permite mostrar todos los componentes(con sus propiedades) que tiene el game object seleccionado
+
+ventana console-> muestra una consola de salida que muestra informacion en texto plano y se utiliza para obtener info durante la depuracion
+
+boton layout
+determina la distribucion de las ventanas
+
+Snaping?-> con esta tecnica podemos conseguir juntar dos objetos sin solaparlos+
+
+Modelar-> (objetos .obj, .fbx , .3ds, .stk(este es de SketchUp) )
+	Entornos de modelado-> 3dMax, Blender, Maya, SweetHome3D, Sketch Up, CAD(?)
+
+Objeto basico Unitiy-> GAme Object, que tiene componentes
+
+Las escenas pueden ser menus
+
+Componente Transform -> Lo tienen todos los Game Objects(menos los UI)
+
+Transform tiene tres propiedades (vectores de posicion(3D-> tres vectores, 2D -> dos vectores), escala, rotacion(cuaternio, tiene cuatro vectores, tres visibles y otro que no))
+
+Cada juego debe tener una camara. 
+
+Particle System-> Se usa para simular efectos(fuego, agua, humo, explosiones)
+
+Camera: puede seguir a un Game Object
+
+Lights_
+	Direccional Light(Sol)
+	Point LIght(Bombilla)
+	SpotLight(Foco) 
+	Area Light(Ilumina una zona de manera rectangular)
+
+Sprite-> es una imagen 2D(normalmente) y se puede usar para realizar efectos como animaciones
+
+Hoja de Sprite -> una coleccion de Sprites en un solo archivo
+
+Cloth -> para crear telas 
+
+Audio Source -> clips de audio
+
+AudioReverbZone-> zona de sonido no localizable
+
+Audio Graduable por distacia-
+	
+Terrain(500x500)-> Le podemos añadir cesped, arboles, montañas, agua, palmeras, viento 
+
+Ragdoll->Personajes
+
+WindZone
+
+
+Vector3.one=> vector3(1,1,1)
+
+vector3.zero => vector3(0,0,0)
+
+.right => (1,0,0)
+.up -> 0 1 0
+.forward -> 0 0 1
+
+.left -> -1 0 0
+.down -> 0 -1 0
+.back -> 0 0 -1
+
+InputManager-> devuelven +-1 como salida
+InputManager ->Teclas del sistema Fire1 y eso
+Horizontal-> devolvera -+ 1 segun si se hace click hacia la derecha o a la izquierda
+Vertical-> """""arriba o abajo
+
+Fire1, Fire2, Fire3
+Ctrl OptionAlt Command
+Mouse x Mouse y
+
+Si modificamos sdatos fisicos desde codigo es cinematica
+si es el motor de fisicas es fisica
+
+
+ clase input permite obtener la pulsacion d elas teclas, que puede preguntar si es la "a" o preguntar por su KeyCode como haciamos en C#
+	
+	Input.-
+		GetAxis;
+		GetButton;-> Lo lee si esta siendo pulsado
+		GetButtonUP; -> Lee si se ha levantado 
+		GetButtonDown; -> Lee si se ha pulsado
+
+	Input.DeviceOrientation-> para el movil giroscopio 
+	.touches-> para tener un array de los toques en la pantalla del movil
+	.acceleration-> para el acelerometro del movil
+
+Transfor depende del espacio donde se encuentre el objeto.
+
+no cambiar el nombre de los scripts, despues de asignarlos. Se cambia el nombre del fichero pero no de la clase, hay que hacerlo manualmente
+
+
+Lerp, permite una cinematica de movimiento entre dos puntosa y b y eso le asignamos al position
+ 
+MoveTowards, casi como Lerp pero sin aceleracion, esta es constante
+
+Clase Mathf -> clase para movimientos cinematicos para calcular valores y cosas. 
+
+Es la sustituta de Math, tiene un conjunto de miembros estaticos, que nos sirven para determinados moviemientos
+
+IsPOwerOfTwo(n)-> para calcular potencias
+
+En algunos casos al utilizar imagenes(sprites) es interesantes que cumpla una condicion, que su ancho y alto sea potencia de 2. 
+
+Lerp(float a, float b, float t)->si t = 0, devuelve a, si t=1, devuelve b o algo asi por que madre mia que mál explica loko
+
+LerpAngle(",",")-> interpola los angulos
+
+PingPong() -> genera un valor de x que nunca es mayor que el maximo, y nunca menor que cero, Se usa para generar movimiento de ida o vuelta
+
+Clamp(valor, min, max)-> devuelve un valor comprendido entre un minimo y un maximo. Si el valor se sale del min o el maximo, cogera cada uno en su respectivo caso.
+
+Sprite->imagen 2D
+
+Quartenio.Identity-> pone el vector Quartenio a 0000
+
+aplication.quit -> cierra el ejecutable
+
+
+
+
+		TEMA 3 PA MORIRSE
+
+
+
+El UI los interfaces graficos han evolucionado desde la version 4, que facilita el proceso y permite ver en diseño. Todo UI tiene un objeto padre llamado Canvas
+Canvas-> es donde se añaden los elementos de un UI, todos los hijos son del canvas. Siempre hay un cavas(puede haber más)
+
+Si queremos añaidr un texto, debemos añadir un cavas y luego el texto o añadir el texto y se crea un canvas automatico
+La vista del canvas, puede volvernos locos, ya que el canvas es muy grande con respecto a la escena y nuestros otros objetos
+
+Nos vamos a la escena, y si añadimos desde GameObject/UI crea la jerarquia automaticamente
+
+Los elementos aparecen en un orden, con caracter general es el de la jerarquia
+
+SetAsFirstSibling
+SetAsLastSibling
+SetSiblingIndex
+
+UnityEngine.UI
+UnityEngine.EventSystem
+
+El renderizado del canvas permite mostrarlo en distintas perpectivas
+
+RenderMode:
+	-Overlay-> Se coloca delante de todo, ajustandose a la pantalla
+	-Camera-> Es igual pero diferente, se muestra delante de los objetos pero a una distancia determinada respecto a la camara
+	-World Space-> Permite al canvas comportarse como un objecto normal de la escena y se puede alterar su tamaño,etc.. en el inspector permitiendo mostrar objetos por delante de la interface
+
+
+Diegetic Interface-> Interface controlables como objeto que se muestra en la escena, por ejemplo combustible tanque
+
+
+Para el posicionamiento del diseño grafico con elementos UI es mejor poner pivot y perspectiva.
+
+
+Transiciones:
+
+No hay click si un objeto no tiene collider
+
+Explicar el Slider como si fueramos gilipollitas profundos, empieza a explicar cosas de verdad y dejarte de esto que ya lo sabemos joder. Esto ya se ve usando el puto entorno durante las dos ultimas clases, se repite más que un loro en una tienda de relojes. 
+
+Direction-< bla bla bla bla bla bla bla bla bla oh my god wow such a magic 
+
+El value del ComboBox(Dropdown) devuelve el valor seleccionado(se le puede asignar tambien)
+
+
+
+InputField->
+OnValueChanged
+
+OnEndEdit
+
+CaracterLimit
+
+ReadOnly
+
+ContentType
+
+ReadOnly
+
+
+Es un componente que se añade a un objeto. Los más importantes son:
+-Content Size Filter->Ajuste al tamaño mas adecuado
+-Layout Element -> Se le suele añadir al objeto Ui que se va a distribuir(contenido), se le añade para que sepa que va a ser organizado
+-Horizontal Layout Group ->
+-Vertical     "      "   ->
+-Grid         "      "   -> https://docs.unity3d.com/Manual/script-GridLayoutGroup.html
+Todos estan en la paleta Layout.
+Las opciones configurables son: WidthMin - HeightMin - WidthPref - HeghtPref - WidthFlex - HeightFlex
+
+Orden Criterios de distribucion= Tamaño minimo permitido,->(si hay más tamaño)-> Tamaño preferido,->(si hay más tamaño)-> Tamaño Flexible
+
+La documentacion lo llama Layout Controler
+
+Aspect Radio Fitter 
+
+
+Propiedades del Grid Layout Group
+Padding-> The padding inside the edges of the layout group.
+Cell Size-> The size to use for each layout element in the group.
+Spacing-> The spacing between the layout elements.
+Start Corner-> The corner where the first element is located.
+Start Axis-> Which primary axis to place elements along. Horizontal will fill an entire row before a new row is started. Vertical will fill an entire column before a new column is started.
+Child Alignment-> The alignment to use for the layout elements if they don’t fill out all the available space.
+Constraint-> Constraint the grid to a fixed number of rows or columns to aid the auto layout system.
+
+
+Animaciones->Ventana Animation Motor Animatic
+
+ONGUI
+
+Texto 3d: TextMesh(volumen) 
+
+
+
+
+Tema Fisicas:
+
+Motores de fisicas de unity: Permite que determinados objetos, a traves de un componente, se le da propiedades fisicas. Permitiendole aplicarle fuerzas(impulso, gravedad, ect) , estar afectado a las fisicas de otros objetos
+
+Unity tiene dos:
+	Motor 3D: PhysX
+	Motor 2D: Box2D
+	
+El motor 3D consume más.
+
+Rigdigibody-> da comportamiento fisico a un objeto
+
+Objeto con Rigidbody= no usar cinematica
+
+WakeUp()->despierta un objeto con rigidbody
+
+para crear colisiones los objetos necesitan uno de ellos rigidbody y los dos collider
+
+Los objetos con collider estaticos para determinados casos (objetos sin movimiento) en el juego pero hay otros collider conocidos como dinamicos
+
+Tipo de cuerpos fisicos en unity-> 
+Estaticos-> Collider y no rigidbody
+Cinematicos -> Collider y rigidbody (is Kinematic)
+Dinamico -> Collider y Rigidbody
+
+
+Enumeracion de tipo de fuerzas: ForceMode
+
+
+Force-> Fuerza continua, tiene en cuenta la masa 
+Acceleration-> Fuerza similar a force, pero no tiene en cuenta la masa
+Impulse -> Aplica una fuerza instantanea teniendo en cuenta su masa 
+Velocity changed -> aplica velocidad al objeto sin importar su masa
+
+Loh collide'
+	Definen la forma de un objeto para el proposito interactuar con colisiones fisicas, es una malla invisible, 
+	que determina cosas fisicas
+	El colider no tiene porque tener la misma apariencia que la forma visible del GameObject
+
+	Hay tres fundamentales, el boxcollider, el spherecollider, y el capsulecollider
+	Hay dos fundamentales(2D), el circlecollider2D, boxcollider2D
+
+	Existe la posiblidad de crear collider personalizados
+	Compound Collider: podemos crear colliders compuestos juntando varios collider primitivos
+
+	Con un dimensionamiento y posicionamiento de un compound Collider podemos crear colliders de objetos no primitivos
+
+	el mejor rendimiento lo dan los collider primitivos 
+	El rigidbody es solo del padre, no de los hijos
+
+	Compound Collider -> Mesh Collider -> Convex
+						permite interactuar con otras propiedades como Inflate Mesh que tiene el valor Skin Width que controla el numero de 
+						aristas del Compound Collider
+	Un sistema de colisiones, se puede gestionar desde codigo, esta previsto desde los scripts controlar las colisiones
+
+	Cuando ocurre una colision se ejecuta una serie de metodos comenzados en On'Evento'
+	OnCollition->Enter()= cuando un objeto colisiona con otro 
+		   ->Stay()=cuando ambos esten colisionando
+		   ->Exist()=cuando deja de existir la colision
+	OnTrigger->Enter,Stay,Exit-> 
+
+	IsTrigger-> se habilita para controlar los disparadores
+	material-> se le puede añadir un objeto fisico para controlar la interactuacion entre collider
+	mesh-> se determina el volumen de la zona del collider
+	convex-> permite detectar otros  meshcollider, y colocar aristas con un maximo de 255
+	
