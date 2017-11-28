@@ -328,4 +328,21 @@ Loh collide'
 	material-> se le puede añadir un objeto fisico para controlar la interactuacion entre collider
 	mesh-> se determina el volumen de la zona del collider
 	convex-> permite detectar otros  meshcollider, y colocar aristas con un maximo de 255
-	
+
+
+lookRotation-> 
+
+
+
+
+
+
+Las colisiones nos permite controlar cuando un objeto toca otro, y para conocer si un objeto entra en el ambito de otro
+Los componentes principales son los collider. Un colider tiene un volumen pero es invisible
+
+Cuando un juego incorpora un componente de la clase Collider puede notificar las colisiones con otros cuerpos, proporcionando
+informacion sobre la colision y el cuerpo colisionado.
+
+ONColliderEnter-> un collider o rigidbody entra en el collider de otro objeto
+OnClliderStay -> Se lanza mientras exista la colision
+OnColliderExit -> Cuando pierde la colision.
