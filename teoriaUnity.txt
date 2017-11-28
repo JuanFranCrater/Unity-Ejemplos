@@ -346,3 +346,16 @@ informacion sobre la colision y el cuerpo colisionado.
 ONColliderEnter-> un collider o rigidbody entra en el collider de otro objeto
 OnClliderStay -> Se lanza mientras exista la colision
 OnColliderExit -> Cuando pierde la colision.
+
+Los rayitos:
+
+Tienen un origen y puede tener un destino o el infinito. 
+Un rayo puede interactuar, chocar o detectar colliders en su camino.
+Pertenece a la clase physics-> Raycast devuelve verdad si hay collider en su trayectoria.
+Los parametros de esta funcion son 4: 
+-Origin-> origen del rayo en cordenadas globales
+-Direction-> Direccion del rayo es un vector que se calcula con los cosenos directores
+-Distance-> distancia, longitud del rayo, puede ser infinito
+-LayerMask-> el rayo marcara la capa a la que aplica. 
+Un rayo puede lanzarlo y detectar el primero qeu detecta o incluso los que esten detras del primero en su trayectoria
+

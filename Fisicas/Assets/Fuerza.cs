@@ -34,4 +34,48 @@ public class Fuerza : MonoBehaviour {
 			_rigidBody.AddTorque (Vector3.up* fuerzaTorque, ForceMode.Force);
 		}
 	}
+	void OnCollisionEnter(Collision colision)
+	{
+		if (colision.gameObject.tag == "Pared") {
+			Debug.Log ("Ha colisionado con ..." + colision.gameObject.name);
+			colision.gameObject.GetComponent<Renderer> ().material.color = Color.blue;
+			;
+			if (colision.relativeVelocity.magnitude > 2F) {
+			//	Destroy (colision.gameObject);
+			}
+		} else if(colision.gameObject.tag=="Enemigo") {
+			Debug.Log ("Te ha pillado");
+			this.gameObject.GetComponent<Renderer> ().material.color = Color.red;
+		}
+	}
+	void OnCollisionStay(Collision colision)
+	{
+		if (colision.gameObject.tag == "Pared") {
+			Debug.Log ("Colisionando con ..." + colision.gameObject.name);
+			if (colision.relativeVelocity.magnitude > 2F) {
+			//Destroy (colision.gameObject);
+			}
+		}
+	}
+	void OnCollisionExit(Collision colision)
+	{
+		if (colision.gameObject.tag == "Pared") {
+			Debug.Log ("Ha dejado de colisionar con ..." + colision.gameObject.name);
+			if (colision.relativeVelocity.magnitude > 2F) {
+				//Destroy (colision.gameObject);
+			}
+		}
+	}
+	void OnTriggerEnter(Collider otro)
+	{
+		
+	}
+	void OnTriggerExit(Collider otro)
+	{
+
+	}
+	void OnTriggerStay(Collider otro)
+	{
+
+	}
 }
