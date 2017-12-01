@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/SphereRayCast.unity
+=======
+- path: Assets/Escena2.unity
+>>>>>>> 5722182e0788b9873dc8cd9c88938d31f06e19fc
   isLoaded: 1
   isActive: 1
