@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Colisiones.cs" />
+     <Compile Include="Assets\DetectarClickEnObjetoRayoDesdeCamara.cs" />
+     <Compile Include="Assets\EsferaCast.cs" />
      <Compile Include="Assets\Fuerza.cs" />
      <Compile Include="Assets\Juego.cs" />
      <Compile Include="Assets\LanzarElRayo.cs" />

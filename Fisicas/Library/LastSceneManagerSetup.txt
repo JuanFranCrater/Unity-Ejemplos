@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Rayo.unity
+- path: Assets/SphereRayCast.unity
   isLoaded: 1
   isActive: 1

@@ -359,3 +359,6 @@ Los parametros de esta funcion son 4:
 -LayerMask-> el rayo marcara la capa a la que aplica. 
 Un rayo puede lanzarlo y detectar el primero qeu detecta o incluso los que esten detras del primero en su trayectoria
 
+
+SphereCast-> en vez de lanzar un rayo, lanza un volumne, de un radio determinado, en caso de detectar algo devuelve true.
+static bool SphereCast(Vector3 origin, float radius, Vector3 direction, out RayCastHit hitInfo, float distancia, LayerMask )
